@@ -5,7 +5,7 @@
         <input type="text"  autofocus placeholder="搜索歌手 歌曲 专辑" v-model.lazy="keyword"><br>
          <div class="iconremove"><img v-if="keyword" @click="remove"  src="../../assets/清空删除.png"></div>
     </div>
-    <div class="result" ref="wrapper">
+    <div class="result"ref="wrapper" >
         <div>
             <div class="title" v-if="title">
                 <div class="hostsearch">
@@ -14,7 +14,7 @@
                     <div class="recent" v-for="(item, index) in recent" :key="index" @click="givetext">
                         <img src="../../assets/记录.png" class="recentimg">
                         <p class="middle">{{item}}</p>
-                        <img src="../../assets/叉号.png" class="recentimg">
+                        <img src="../../assets/叉号.png" class="recentimg" @click="removethis(index)">
                     </div>
                 </div>
                
@@ -24,7 +24,7 @@
            <p>歌手：</p><span class="singerspan">{{singer.name}}</span>
            <img src="../../assets/右.png" class="singer-rtpg">
         </router-link>
-        <div class="songs">
+        <div class="songs" >
                 <div class="item" v-for="item in searchobj" :key="item.id" @click="postinfo(item.id,item.name,item.ar[0].name,item.al.picUrl)">
                    <p> {{item.name}}</p>  
                    <span class="albumcolor">{{item.ar[0].name}}</span><span >-{{item.al.name}}</span>
@@ -98,6 +98,9 @@ export default {
         },
         givetext(e){
             this.keyword=e.target.innerText;
+        },
+        removethis(count){
+            this.$store.commit("deletechild",count)
         }
     },
     computed:{

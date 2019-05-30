@@ -60,6 +60,11 @@ export default new Vuex.Store({
        }
       
      },
+     deletechild(state,index){
+      state.history=JSON.parse(localStorage.history);
+      state.history.splice(index,1);
+      localStorage.history=JSON.stringify(state.history)
+     },
      playall(state,msg){
        state.listsongs=msg;
      }
