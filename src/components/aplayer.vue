@@ -71,10 +71,7 @@ export default {
 </script>  
 
 <style scoped>  
-.play{
-  height: 90px;
-  overflow: hidden;
-}
+
 
 </style>  
  

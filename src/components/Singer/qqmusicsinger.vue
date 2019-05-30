@@ -127,7 +127,7 @@ export default {
         },
         postinfo2(index){  
          this.postmsg.pic=this.qqobj[index].pic;
-         this.postmsg.lrc=this.qqobj[index].lrc.replace('http','https')
+         this.postmsg.lrc=this.qqobj[index].lrc;
          this.postmsg.title=this.qqobj[index].name;
          this.postmsg.src=this.qqobj[index].url;
          this.postmsg.artist=this.qqobj[index].singer;
@@ -172,6 +172,7 @@ export default {
     padding: 10px 16px;
     height: auto;
     overflow: hidden;
+    
 }
 .p1{
     color: #909399;
@@ -180,7 +181,9 @@ export default {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    /*! autoprefixer: off */
     -webkit-box-orient: vertical;
+    /*! autoprefixer: on */
    
 }
 .p2{

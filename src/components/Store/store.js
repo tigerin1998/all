@@ -50,9 +50,15 @@ export default new Vuex.Store({
        state.hostinfo=res;
      },
      recentsearch(state,msg){
-      state.history=JSON.parse(localStorage.history)
-      state.history.unshift(msg)
-      localStorage.history=JSON.stringify(state.history)
+       if(localStorage.history){
+        state.history=JSON.parse(localStorage.history)
+        state.history.unshift(msg)
+        localStorage.history=JSON.stringify(state.history)
+       }else{
+        state.history.unshift(msg)
+        localStorage.history=JSON.stringify(state.history)
+       }
+      
      },
      playall(state,msg){
        state.listsongs=msg;

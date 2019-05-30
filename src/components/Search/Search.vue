@@ -193,7 +193,7 @@ img{
     border-radius:50%; 
 }
 .singer-rtpg{
-  margin-left: 120px;
+  margin-left: 100px;
   width: 40px;
   height: 40px;
 }

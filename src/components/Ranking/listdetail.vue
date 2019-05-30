@@ -54,6 +54,7 @@ export default {
         },
         showinfo2:function(res){
             this.postmsg.lrc=res.config.url;
+            
         },
         backhome:function(){
         this.$router.go(-1)
